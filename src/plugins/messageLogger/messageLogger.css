@@ -1,0 +1,54 @@
+.messagelogger-deleted [class^="buttons"] {
+    display: none;
+}
+
+.messagelogger-deleted
+:is(
+    video,
+    .emoji,
+    [data-type="sticker"],
+    iframe,
+    .messagelogger-deleted-attachment,
+    [class|="inlineMediaEmbed"]
+) {
+    filter: grayscale(1) !important;
+    transition: 150ms filter ease-in-out;
+
+    &[class*="hiddenMosaicItem_"] {
+        filter: grayscale(1) blur(var(--custom-message-attachment-spoiler-blur-radius, 44px)) !important;
+    }
+}
+
+.messagelogger-deleted
+:is(
+    video,
+    .emoji,
+    [data-type="sticker"],
+    iframe,
+    .messagelogger-deleted-attachment,
+    [class|="inlineMediaEmbed"]
+):hover {
+    filter: grayscale(0) !important;
+}
+
+.theme-dark .messagelogger-edited {
+    filter: brightness(80%);
+}
+
+.theme-light .messagelogger-edited {
+    opacity: 0.5;
+}
+
+.messagelogger-edit-marker {
+    cursor: pointer;
+}
+
+.vc-ml-modal-timestamp {
+    cursor: unset;
+    height: unset;
+}
+
+.vc-ml-modal-tab-bar {
+    flex-wrap: wrap;
+    gap: 16px;
+}
